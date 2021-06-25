@@ -52,8 +52,8 @@ void main() {
     ofstream outFile;
     outFile.open(fileName);
     if (outFile.is_open()) {
-        for (int i = 1; i <= passCount; i++) {
-            for (int j = 1; j <= passLength; j++) {
+        for (int i = 0; i <= passCount - 1; i++) {
+            for (int j = 0; j <= passLength - 1; j++) {
                 char passSymbol = passLib[getRandomNumber(0, libLength - 1)];
                 outFile << passSymbol;
                 cout << passSymbol;
@@ -64,4 +64,5 @@ void main() {
     }
     cout << "Your passwords save in file : " << fileName << endl;
     cout << "Every password have " << getVariants (passLength, libLength) << " variants !" << endl;
+    system("PAUSE");
 }
